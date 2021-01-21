@@ -1,0 +1,37 @@
+{
+  "name": "cubed",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:affaxltd/cubed.git",
+  "author": "Affax <me@affax.dev>",
+  "license": "MIT",
+  "scripts": {
+    "compile": "yarn truffle compile",
+    "deploy:kovan": "yarn truffle migrate --network kovan",
+    "deploy:mainnet": "yarn truffle migrate --network mainnet",
+    "deploy:fork": "yarn truffle migrate --network fork",
+    "console:fork": "yarn truffle console --network fork",
+    "run:fork": "yarn ganache-cli --fork https://mainnet.infura.io/v3/bd0c2cf1b7de43c9a3a70ce2f577d29c --forkCacheSize -1 --keepAliveTimeout 10000 --defaultBalanceEther 10000 --gasPrice 1000000000 --gasLimit 20000000 --chainId 1 --networkId 1 --quiet --unlock \"0x47ac0Fb4F2D84898e4D9E7b4DaB3C24507a6D503\" --unlock \"0x2bf792Ffe8803585F74E06907900c2dc2c29aDcb\"",
+    "test:fork": "yarn concurrently --success first --kill-others \"yarn run:fork\" \"yarn truffle test --network fork ./test/stabl.js\""
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.3.0",
+    "@truffle/hdwallet-provider": "^1.2.0",
+    "dotenv": "^8.2.0",
+    "ethers": "^5.0.24",
+    "truffle": "^5.1.57"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "ganache-cli": "^6.12.1",
+    "prettier": "^2.2.1"
+  }
+}
