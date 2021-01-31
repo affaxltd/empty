@@ -8,20 +8,20 @@ module.exports = {
     fork: {
       host: "127.0.0.1",
       port: 8545,
-      gas: 15000000,
-      gasPrice: 21000000000,
+      gas: 7500000,
+      gasPrice: 45000000000,
       network_id: 1,
     },
     kovan: {
-      provider: () => new HDWalletProvider(env.MEMO, env.INFURA),
-      gas: 5000000,
-      gasPrice: 30000000000,
+      provider: () => new HDWalletProvider(env.MEMO, env.KINFURA),
+      gas: 7500000,
+      gasPrice: 4500000000,
       network_id: 42,
     },
     mainnet: {
       provider: () => new HDWalletProvider(env.MEMO, env.INFURA),
-      gas: 5000000,
-      gasPrice: 11000000000,
+      gas: 7500000,
+      gasPrice: 45000000000,
       network_id: 1,
     },
   },
@@ -35,5 +35,9 @@ module.exports = {
         },
       },
     },
+  },
+  plugins: ["truffle-plugin-verify"],
+  api_keys: {
+    etherscan: env.ETHERSCAN_API,
   },
 };

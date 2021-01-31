@@ -19,6 +19,6 @@ library UniswapV2Library {
     uint256 amountInWithFee = amountIn.mul(997);
     uint256 numerator = amountInWithFee.mul(reserveOut);
     uint256 denominator = reserveIn.mul(1000).add(amountInWithFee);
-    amountOut = numerator / denominator;
+    amountOut = numerator.div(denominator);
   }
 }

@@ -32,6 +32,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "ganache-cli": "^6.12.1",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "truffle-plugin-verify": "^0.5.4"
   }
 }
