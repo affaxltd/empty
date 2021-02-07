@@ -11,15 +11,17 @@
     "deploy:mainnet": "yarn truffle migrate --network mainnet",
     "deploy:fork": "yarn truffle migrate --network fork",
     "console:fork": "yarn truffle console --network fork",
-    "run:fork": "yarn ganache-cli --fork https://mainnet.infura.io/v3/bd0c2cf1b7de43c9a3a70ce2f577d29c --forkCacheSize -1 --keepAliveTimeout 10000 --defaultBalanceEther 10000 --gasPrice 1000000000 --gasLimit 20000000 --chainId 1 --networkId 1 --quiet --unlock \"0x47ac0Fb4F2D84898e4D9E7b4DaB3C24507a6D503\" --unlock \"0x2bf792Ffe8803585F74E06907900c2dc2c29aDcb\"",
-    "test:fork": "yarn concurrently --success first --kill-others \"yarn run:fork\" \"yarn truffle test --network fork ./test/stabl.js\""
+    "run:fork": "yarn ganache-cli --fork https://mainnet.infura.io/v3/bd0c2cf1b7de43c9a3a70ce2f577d29c --forkCacheSize -1 --keepAliveTimeout 10000 --defaultBalanceEther 1000 --gasPrice 1000000000 --gasLimit 20000000 --chainId 1 --networkId 1 --quiet --unlock \"0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8\"",
+    "test:fork": "yarn concurrently --success first --kill-others \"yarn run:fork\" \"yarn truffle test --network fork ./test/singularity.js\""
   },
   "dependencies": {
     "@openzeppelin/contracts": "^3.3.0",
+    "@openzeppelin/test-helpers": "^0.5.10",
     "@truffle/hdwallet-provider": "^1.2.0",
     "dotenv": "^8.2.0",
-    "ethers": "^5.0.24",
-    "truffle": "^5.1.57"
+    "ethers": "^5.0.29",
+    "truffle": "^5.1.57",
+    "truffle-assertions": "^0.9.2"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

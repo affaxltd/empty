@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.6.12;
+pragma solidity ^0.7.6;
 
 interface IHarvestPool {
   function stake(uint256 amount) external;
@@ -15,4 +15,6 @@ interface IHarvestPool {
   function earned(address account) external view returns (uint256);
 
   function lpToken() external view returns (address);
+
+  function getReward() external;
 }
